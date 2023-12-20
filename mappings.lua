@@ -27,4 +27,21 @@ M.crates = {
   }
 }
 
+M.general = {
+  n = {
+    ["<leader>ld"] = {
+      function ()
+        require('telescope.builtin').lsp_definitions()
+        end,
+      "[L]SP: Goto [D]efinition"
+    },
+    ["<leader>lD"] = {
+      function ()
+        vim.lsp.buf.declaration()
+        end,
+      "[L]SP: Goto [D]eclaration"
+    }
+  }
+}
+
 return M
